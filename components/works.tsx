@@ -10,6 +10,9 @@ export default function Works({ cinematicMode }: WorksProps) {
   const DAWIT_DREAMS_VIDEO =
     'https://player.cloudinary.com/embed/?cloud_name=dyzhbjom8&public_id=IMG_3810_zl9afg&autoplay=true&muted=true&loop=true&muted_default=true';
 
+  const ABAY_TV_VIDEO =
+    'https://player.cloudinary.com/embed/?cloud_name=dyzhbjom8&public_id=50_filmm_le6g4h&autoplay=true&muted=true&loop=true&muted_default=true';
+
   const works = [
     {
       id: 1,
@@ -24,7 +27,8 @@ export default function Works({ cinematicMode }: WorksProps) {
       name: 'Abay TV',
       description: 'High-quality broadcast content and digital storytelling. Crafting engaging narratives for diverse audiences.',
       role: 'Video Editor & Motion Designer',
-      tags: ['Broadcast', 'Motion Graphics', 'Content Strategy']
+      tags: ['Broadcast', 'Motion Graphics', 'Content Strategy'],
+      videoUrl: ABAY_TV_VIDEO,
     }
   ];
 
