@@ -93,7 +93,6 @@ export default function Hero({ cinematicMode }: HeroProps) {
           <motion.div
             className="relative w-72 h-72 rounded-full overflow-hidden shadow-2xl shadow-orange-200/40 dark:shadow-orange-600/30 z-10"
             whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.4 }}
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, delay: 0 }}
           >
@@ -111,7 +110,7 @@ export default function Hero({ cinematicMode }: HeroProps) {
 
             <Image
               src="/yab-g-hero.jpg"
-              alt="Yab G - Videographer & Editor"
+              alt="Yabets Getachew - Videographer & Editor"
               fill
               priority
               className="object-cover"

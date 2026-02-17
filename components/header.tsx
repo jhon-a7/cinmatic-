@@ -20,7 +20,7 @@ export default function Header({ cinematicMode, setCinematicMode }: HeaderProps)
         {/* Logo */}
         <motion.div className="flex flex-col" whileHover={{ scale: 1.02 }}>
           <h1 className="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white text-lg-tracking">
-            YAB G
+            YABETS GETACHEW
           </h1>
           <p className="text-xs text-orange-600 dark:text-orange-500 text-sm-tracking mt-1">
             VIDEOGRAPHER & EDITOR

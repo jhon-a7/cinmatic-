@@ -141,7 +141,7 @@ export default function Contact({ cinematicMode }: ContactProps) {
         viewport={{ once: true }}
       >
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-zinc-600 dark:text-zinc-400 text-sm-tracking">
-          <p>© 2026 YAB G. All rights reserved.</p>
+          <p>© 2026 Yabets Getachew. All rights reserved.</p>
           <span className="hidden sm:block text-orange-600 dark:text-orange-500">•</span>
           <p>Crafted with vision. Shot with passion. Edited with precision.</p>
         </div>

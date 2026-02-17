@@ -8,11 +8,11 @@ const _geist = Geist({ subsets: ['latin'] })
 const _geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Yab G | Videographer & Editor | Cinematic Storytelling',
+  title: 'Yabets Getachew | Videographer & Editor | Cinematic Storytelling',
   description: 'Premium cinematic videography and editing. Stories in motion. Crafted with vision, shot with passion, edited with precision.',
   generator: 'v0.app',
   openGraph: {
-    title: 'Yab G | Videographer & Editor',
+    title: 'Yabets Getachew  | Videographer & Editor',
     description: 'Cinematic videography and professional video editing. Creative visual storytelling.',
     type: 'website',
   },

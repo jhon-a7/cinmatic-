@@ -25,7 +25,7 @@ const itemVariants = {
 const experiences = [
   {
     company: 'Dawit Dreams Company',
-    period: '2024 - Present',
+    period: '2022 - 2023 ',
     role: 'Videographer & Video Editor',
     description: 'Professional video recording, editing, and social media content management for creative clients.',
     tasks: ['Video Production', 'Post-Production Editing', 'Social Media Management'],
@@ -43,6 +43,13 @@ const experiences = [
     role: 'Video Editor & Content Manager',
     description: 'Managing video content production, graphic design, and YouTube channel strategy.',
     tasks: ['YouTube Management', 'Video Editing', 'Social Media Design'],
+  },
+  {
+    company: 'Path Creative',
+    period: '2026',
+    role: 'Video Production',
+    description: 'Video production and creative content for Path Creative.',
+    tasks: ['Video Production', 'Creative Content', 'Post-Production'],
   },
 ];
 
