@@ -7,13 +7,17 @@ interface WorksProps {
 }
 
 export default function Works({ cinematicMode }: WorksProps) {
+  const DAWIT_DREAMS_VIDEO =
+    'https://player.cloudinary.com/embed/?cloud_name=dyzhbjom8&public_id=IMG_3810_zl9afg&autoplay=true&muted=true&loop=true&muted_default=true';
+
   const works = [
     {
       id: 1,
       name: 'Dawit Dreams',
       description: 'Cinematic brand storytelling and social content creation. Capturing authentic moments with premium production value.',
       role: 'Lead Videographer & Editor',
-      tags: ['Cinematography', 'Social Media', 'Brand Content']
+      tags: ['Cinematography', 'Social Media', 'Brand Content'],
+      videoUrl: DAWIT_DREAMS_VIDEO,
     },
     {
       id: 2,
@@ -49,7 +53,7 @@ export default function Works({ cinematicMode }: WorksProps) {
           {works.map((work, index) => (
             <motion.div
               key={work.id}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch ${
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-x-24 lg:gap-y-12 items-stretch ${
                 index % 2 === 1 ? 'lg:grid-flow-dense' : ''
               }`}
               initial={{ opacity: 0, y: 40 }}
@@ -57,7 +61,7 @@ export default function Works({ cinematicMode }: WorksProps) {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              {/* Video placeholder */}
+              {/* Video: Cloudinary embed for Dawit Dreams, placeholder for others */}
               <motion.div
                 className={`relative aspect-video overflow-hidden bg-gradient-to-br from-orange-50 to-amber-50 dark:from-zinc-900 dark:to-zinc-800 border border-orange-300/40 dark:border-zinc-700 group rounded shadow-lg shadow-orange-200/20 dark:shadow-none ${
                   index % 2 === 1 ? 'lg:order-2' : ''
@@ -65,34 +69,44 @@ export default function Works({ cinematicMode }: WorksProps) {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               >
-                <motion.div
-                  className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-orange-500/10 via-transparent to-white/30 dark:to-zinc-800/30 z-10"
-                  animate={{ opacity: [0.3, 0.5, 0.3] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  <div className="text-center space-y-4">
-                    <motion.svg
-                      className="w-16 h-16 mx-auto text-orange-600/50 dark:text-orange-500/50 group-hover:text-orange-600/70 dark:group-hover:text-orange-500/70 transition-colors duration-300"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      animate={{ scale: [1, 1.1, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
+                {'videoUrl' in work && work.videoUrl ? (
+                  <iframe
+                    src={work.videoUrl}
+                    title={`${work.name} video`}
+                    className="absolute inset-0 w-full h-full rounded"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <>
+                    <motion.div
+                      className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-orange-500/10 via-transparent to-white/30 dark:to-zinc-800/30 z-10"
+                      animate={{ opacity: [0.3, 0.5, 0.3] }}
+                      transition={{ duration: 3, repeat: Infinity }}
                     >
-                      <path d="M8 5v14l11-7z" />
-                    </motion.svg>
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400 group-hover:text-orange-600/70 dark:group-hover:text-orange-500/70 transition-colors duration-300">
-                      Video Placeholder
-                    </p>
-                  </div>
-                </motion.div>
-                <motion.div
-                  className="absolute inset-0 border border-orange-300/40 dark:border-zinc-600/40 group-hover:border-orange-500/60 dark:group-hover:border-orange-500/50 transition-colors duration-300 z-20 rounded"
-                  animate={{ borderColor: ['rgba(234, 88, 12, 0.3)', 'rgba(234, 88, 12, 0.5)', 'rgba(234, 88, 12, 0.3)'] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                />
-
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/5 transition-colors duration-300" />
+                      <div className="text-center space-y-4">
+                        <motion.svg
+                          className="w-16 h-16 mx-auto text-orange-600/50 dark:text-orange-500/50 group-hover:text-orange-600/70 dark:group-hover:text-orange-500/70 transition-colors duration-300"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          animate={{ scale: [1, 1.1, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </motion.svg>
+                        <p className="text-sm text-zinc-500 dark:text-zinc-400 group-hover:text-orange-600/70 dark:group-hover:text-orange-500/70 transition-colors duration-300">
+                          Video Placeholder
+                        </p>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      className="absolute inset-0 border border-orange-300/40 dark:border-zinc-600/40 group-hover:border-orange-500/60 dark:group-hover:border-orange-500/50 transition-colors duration-300 z-20 rounded"
+                      animate={{ borderColor: ['rgba(234, 88, 12, 0.3)', 'rgba(234, 88, 12, 0.5)', 'rgba(234, 88, 12, 0.3)'] }}
+                      transition={{ duration: 4, repeat: Infinity }}
+                    />
+                    <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/5 transition-colors duration-300" />
+                  </>
+                )}
               </motion.div>
 
               {/* Content */}

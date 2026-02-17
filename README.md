@@ -58,6 +58,21 @@ A premium cinematic portfolio website for **Yab G**, a creative videographer and
    pnpm build
    ```
 
+## ☁️ Cloudinary
+
+Images and videos can be delivered and uploaded via [Cloudinary](https://cloudinary.com). Credentials are in `.env.local` (never commit this file).
+
+1. **Set your Cloud Name** in `.env.local`: get it from [Cloudinary Console](https://console.cloudinary.com) and set `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name`.
+2. **Display images**: use the `CloudinaryImage` component or `CldImage` from `next-cloudinary` with a Cloudinary `public_id` as `src`.
+3. **Upload widget**: use `CldUploadWidget` from `next-cloudinary` with `signatureEndpoint="/api/sign-cloudinary-params"` for signed uploads.
+
+```tsx
+import { CloudinaryImage } from '@/components/cloudinary-image';
+// Or: import { CldImage, CldUploadWidget } from 'next-cloudinary';
+
+<CloudinaryImage src="portfolio/hero" width={400} height={400} alt="Hero" />
+```
+
 ## 🎥 Adding Videos
 
 Replace video placeholders in `components/works.tsx`:
